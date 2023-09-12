@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculation History</title>
+</head>
+<body>
+    <h1>Calculation History</h1>
+    <table>
+        <tr>
+            <th>Expression</th>
+            <th>Result</th>
+        </tr>
+        {% for entry in history %}
+        <tr>
+            <td>{{ entry[0] }}</td>
+            <td>{{ entry[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form method="POST" action="/clear-history">
+        <button type="submit" class="btn-clear-history">Clear History</button>
+    </form>    
+    <a href="/">Back to Calculator</a>
+</body>
+</html>
