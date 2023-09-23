@@ -1,0 +1,17 @@
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db # This ensures that the web service starts after the db service
+    environment:
+      - MONGO_URI={{secrets.MONGO_URI}}/calculator # Use the MongoDB service name as the hostname
+
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
