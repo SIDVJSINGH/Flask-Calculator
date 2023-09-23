@@ -11,6 +11,6 @@ app.config["MONGO_URI"] = "mongodb+srv://sidvjsingh:qns6OsGz45N9rouO@flaskapp.0o
 # Mongodb Object declaration
 mongo = PyMongo(app)
 # local database collection 
-db = mongo.db.history
+# db = mongo.db.history
 
 from application import routes
