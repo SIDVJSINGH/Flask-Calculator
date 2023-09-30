@@ -1,6 +1,11 @@
 FROM python:3-alpine3.18
+# FROM alpine:latest
 
 LABEL authors="siddhant vijay singh"
+
+# To set the timezone of the Docker container to Asia/Kolkata
+RUN apk --no-cache add tzdata
+ENV TZ=Asia/Kolkata
 
 WORKDIR /app
 

@@ -13,11 +13,11 @@ def home():
             
             # Create a new collection for each user (if it doesn't exist)
             user_collection = mongo.db[user]
-            
+            date = datetime.now()
             user_collection.insert_one({"expression": expression,
                             "result": result,
                             "user": user,
-                       "date": datetime.now()})
+                       "date": date})
 
             return jsonify({'message': 'Data saved successfully'}), 200
         except Exception as e:
